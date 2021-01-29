@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\PhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResources(['photo' => 'API\PhotoController']);
+//Route::apiResources(['photo' => 'API\PhotoController']);
+Route::resource('photo', PhotoController::class);

@@ -8,8 +8,8 @@
 
   <title>Vue js App</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -44,7 +44,6 @@
     </div>
   </div>
 </div>
-
 
 <script src="{{ mix('js/app.js') }}"></script>
 </body>

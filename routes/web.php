@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/info', function() {
+    $x = 1;
+    $y = 2;
+
+    echo "CANDA XDEBUG";
+
+
+});
+
 Route::get('/', function () {
     return view('master');
 });

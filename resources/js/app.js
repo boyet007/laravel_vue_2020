@@ -1,14 +1,20 @@
-require('./bootstrap');
+//require ('bootstrap');
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { Form, HasError, AlertError } from 'vform';
 import Swal from 'sweetalert2';
 import { routes } from './routes';
+import axios from 'axios';
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+//import $ from 'jquery'
 
+//window.$ = window.jQuery = $
+window.$ = require('jquery');
 window.Vue = require('vue');
 Vue.use(VueRouter);
+Vue.prototype.$http = axios;
 Vue.component('pagination', require('laravel-vue-pagination'));
-
 
 window.Swal = Swal;
 const Toast = Swal.mixin({
@@ -17,7 +23,7 @@ const Toast = Swal.mixin({
     showConfirmButton: false,
     timer: 3000,
     timerProgressBar: true,
-    onOpen: (toast) => {
+    didOpen: (toast) => {
         toast.addEventListener('mouseenter', Swal.stopTimer);
         toast.addEventListener('mouseleave', Swal.resumeTimer);
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Upload;
+use App\Models\Upload;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        return Upload::latest()->paginate(1);
+        return Upload::latest()->paginate(5);
     }
 
     /**
@@ -33,8 +33,8 @@ class PhotoController extends Controller
 
 
         if ($request->photo) {
-            $name = time() . '.' . explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ';')))[1][1]);
-            \Image::make($request->photo)->save(public_path('img/profile') . $name);
+            $name = time() . '.' . explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ';')))[1])[1];
+            \Image::make($request->photo)->save(public_path('img/') . $name);
             $request->merge(['photo' => $name]);
         }
 
@@ -106,6 +106,6 @@ class PhotoController extends Controller
 
         return [
             'message' => 'Photo deleted successfully'
-        ]
+        ];
     }
 }
